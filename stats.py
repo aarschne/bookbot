@@ -13,3 +13,20 @@ def get_frequency_chars(content):
             freq_count[char] = 1
 
     return freq_count
+
+def sort_on(items):
+    return items["num"]
+
+def sort_dict(dict):
+    dict_list = []
+
+    for key in dict:
+        temp_dict = {}
+        temp_dict["char"] = key
+        temp_dict["num"] = dict[key]
+        if key.isalpha():
+            dict_list.append(temp_dict)
+    
+    dict_list.sort(reverse = True, key = sort_on)
+
+    return dict_list
